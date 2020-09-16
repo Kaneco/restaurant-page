@@ -8,49 +8,58 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="main.css" />
+    <script src="main.js" async defer></script>
 </head>
 
 <body>
-    <div id="header" class="shift">
-        <a href="#" class="text-decoration-none">Home</a>
-        <a href="#" class="text-decoration-none">About</a>
-        <img id="logo" src="./img/logo.png" />
-        <a href="#" class="text-decoration-none">Menu</a>
-        <a href="#" class="text-decoration-none">Contact</a>
-    </div>
-    <div id="content">
-        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./img/home1.jpg" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                    <img src="./img/home2.jpg" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                    <img src="./img/home3.jpg" class="d-block w-100" alt="..." />
-                </div>
+    <div id="container">
+        <div id="header" class="shift header-menu">
+            <img class="" id="mobile-logo" src="./img/mobile-logo.png" />
+            <a href="#home" class="text-decoration-none menu active" id="menu-home">Home</a>
+            <a href="#about" class="text-decoration-none menu" id="menu-about">About</a>
+            <img class="" id="logo" src="./img/logo.png" />
+            <a href="#menu" class="text-decoration-none menu" id="menu-menu">Menu</a>
+            <a href="#contact" class="text-decoration-none menu" id="menu-contact">Contact</a>
+            <a id="mobile-menu" href="#" class="icon"><i class="fa fa-bars"></i></a>
+        </div>
+        <div id="content">
+            <img src="./img/food1.jpg" class="food-thumbnail img-thumbnail rounded float-right">
+            <h3>Your favorite beachside taqueria</h3>
+            <p>Guacamole, tacos, quesadillas, margaritas e mezcal. Tudo o que é tipicamente mexicano está no novo Paco
+                Bigotes. Abriu a 7 de fevereiro em São Pedro do Estoril. O projeto é de quatro amigos que tiveram a
+                ideia de criá-lo depois de uma viagem que fizeram a várias cidades no México. Aos fins de semana
+                funciona até às duas da manhã com cocktails e muita música latina.</p>
+            <br>
+            <br>
+            <img src="./img/food2.jpg" class="food-thumbnail img-thumbnail rounded float-left">
+            <br>
+            <br>
+            <blockquote class="blockquote text-right">
+                <p class="mb-0">"O Paco Bigotes desafiou a racionalidade económica e venceu-a. A ideia, a localização,
+                    tinha tudo para levar ao desastre, mas estamos perante um desses casos em que o restaurante é tão
+                    bom que ultrapassa os condicionalismos."</p>
+                <footer class="blockquote-footer">Alfredo Lacerda in <cite title="Source Title">timeout.pt</cite>
+                </footer>
+            </blockquote>
+        </div>
+        <div id="footer">
+            <div id="address">
+                <h5>Address:</h5>
+                <p>Rua Nunes dos Santos 11, São Pedro do Estoril
+                    2765-529 São Pedro do Estoril</p>
+            </div>
+            <div id="contactos">
+                <h5>Contact:</h5>
+                <p>(+351) 214 076 708</p>
+            </div>
+            <div id="social-media">
+                <h5>Follow Us:</h5>
+                <i class="fab fa-facebook-square fa-3x"></i>
+                <i class="fab fa-twitter-square fa-3x"></i>
+                <i class="fab fa-instagram-square fa-3x"></i>
             </div>
         </div>
     </div>
-    <div id="overlapped-content">
-        <div id=container>
-            The best
-            <div id=flip>
-                <div>
-                    <div>Tacos</div>
-                </div>
-                <div>
-                    <div>Ceviches</div>
-                </div>
-                <div>
-                    <div>Tostadas</div>
-                </div>
-            </div>
-            In Cascais!
-        </div>
-    </div>
-    <script src="main.js" async defer></script>
 </body>
 
 </html>
