@@ -3,73 +3,104 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media all and (max-width: 600px) {
+	#container{
+		grid-template-rows: 44px auto auto !important;
+	}
+	
+	
 	#header {
 		display: flex;
 		background: #ffffff;
 		overflow: hidden;
 		flex-wrap: wrap;
+		position: relative;
 		align-items: center;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		box-shadow: 0px 5px 0px #dedede;
-		z-index: 100;
 		grid-area: header;
 		background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
-		transition: 1s;
+		transition: height 0.3s ease-in-out;
+		height: 44px;
 	}
 
-	.toggle-active #header {
-		-webkit-transition: all 1s ease-in-out;
-		-moz-transition: all 1s ease-in-out;
-		-o-transition: all 1s ease-in-out;
-		transition: all 1s ease-in-out;
-	}
 
-	#mobile-menu {
-		align-self: flex-end;
-		margin-left: auto;
-	}
-	
 	.menu {
 		flex-flow: column wrap;
-		flex: 1 100%;
 		display: none;
-		transition: 1s;
 	}
 
-	#mobile-logo{
+	/* Show small logo */
+	#mobile-logo {
 		display: block;
-	}
-
-
-	.header-menu img {
-		display: none;
-		float: left;
+		margin-left: 15px;
 		max-width: 120px;
 		max-height: 120px;
-		width: auto;
-		height: auto;
 	}
 
-	.toggle-active #mobile-menu {
+	/* Hide full logo */
+	.header-menu img {
+		display: none;
+	}
+
+
+	/* When Mobile Dropdown is active */
+	/* X button on top right corner */
+	.toggle-active #mobile-menu { 
 		position: absolute;
 		top: 1px;
 		right: 2px;
 	}
 
-	.toggle-active #logo {
+	#header.toggle-active {
+		flex-direction: column;
+		align-content: flex-start;
+		justify-content: flex-start;
+		align-items: flex-start;
+		height: 176px;
+	}
+
+	#header.toggle-active .menu {
+		display: block;
+		-webkit-animation: fadeIn 0.7s;
+    	animation: fadeIn 0.7s;
+	}
+
+	/* Position Full Logo on side of menu */
+	#header.toggle-active #logo {
 		display: block;
 		position: absolute;
 		max-width: 120px;
 		max-height: 120px;
-		width: auto;
-		height: auto;
+		top: 50%;
+        left: 50%;
+        margin-right: -50%;
+		transform: translate(-40%, -50%);
+		-webkit-animation: fadeIn 0.7s;
+    	animation: fadeIn 0.7s;
 	}
 
-	.toggle-active .menu {
-		display: block;
+	@-webkit-keyframes fadeIn {
+		0%   { opacity: 0; }
+		40% { opacity: 0; }
+		100% { opacity: 1; }
 	}
+	@keyframes fadeIn {
+		0%   { opacity: 0; }
+		40% { opacity: 0; }
+		100% { opacity: 1; }
+	  }
+
+	/* Hide mobile logo */
 	.toggle-active #mobile-logo {
 		display: none;
+	}
+
+	.shift a {
+		position: relative;
+		z-index: 1;
+	}
+	.shift a:hover {
+		color: #ffffff !important;
 	}
 }
 /* Desktop menu */
@@ -97,7 +128,6 @@
 		max-height: 130px;
 		width: auto;
 		height: auto;
-
 	}
 
 	#mobile-title {
@@ -105,6 +135,59 @@
 	}
 	#mobile-menu {
 		display: none;
+	}
+
+	/* SHIFT */
+	.shift a {
+		position: relative;
+		z-index: 1;
+	}
+	.shift a:hover {
+		color: #ffffff !important;
+	}
+	.shift a:after {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		width: 100%;
+		height: 1px;
+		content: ".";
+		color: transparent;
+		background: hsla(0, 0%, 100%, 0);
+		visibility: none;
+		opacity: 0;
+		z-index: -1;
+	}
+	.shift a:hover:after {
+		opacity: 1;
+		visibility: visible;
+		height: 100%;
+	}
+
+	a::before {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 3px;
+		left: 0;
+		height: 3px;
+		width: 100%;
+		background-color: #ffffff;
+		transform-origin: right top;
+		transform: scale(0, 1);
+		transition: color 0.1s, transform 0.2s ease-out;
+	}
+	a:active::before {
+		background-color: #ffffff;
+	}
+	a:hover::before,
+	a:focus::before {
+		transform-origin: left top;
+		transform: scale(1, 1);
 	}
 }
 
@@ -116,7 +199,7 @@ body {
 	height: 100vh;
 	width: 100vw;
 	display: grid;
-	grid-template-rows: auto auto auto;
+	grid-template-rows: 140px auto auto;
 	grid-template-columns: 1fr;
 	grid-template-areas:
 		"header"
@@ -133,9 +216,10 @@ body {
 	background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
 	grid-template-rows: auto;
 	grid-template-columns: 45% 35% 20%;
-	font-size: 10px;
+	font-size: 11px;
 	justify-items: start;
 	align-items: start;
+
 }
 
 #footer h5 {
@@ -157,10 +241,12 @@ body {
 }
 
 .food-thumbnail {
-	height: auto;
-	width: auto;
-	max-width: 40%;
-	max-height: 40%;
+	display: inline-block;
+	margin: 20px;
+	margin-bottom: 50px;
+	min-width: 250px;
+	height: 30%;
+	width: 30%;
 }
 
 #carousel {
@@ -184,8 +270,8 @@ body {
 a {
 	padding: 10px;
 	text-decoration: inherit; /* no underline */
-	color: rgb(26, 26, 26) !important;
-	font-weight: 600;
+	color: rgb(0, 0, 0) !important;
+	font-weight: 500;
 	font-size: 16px;
 	margin: 0 10px;
 	font-family: "Open Sans", sans-serif;
@@ -195,63 +281,10 @@ a {
 a,
 a:after,
 a:before {
-	transition: all 0.5s;
+	transition: all 0.4s;
 }
 a:hover {
 	color: #555;
-}
-
-/* SHIFT */
-.shift a {
-	position: relative;
-	z-index: 1;
-}
-.shift a:hover {
-	color: #ffffff !important;
-}
-.shift a:after {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	margin: auto;
-	width: 100%;
-	height: 1px;
-	content: ".";
-	color: transparent;
-	background: hsla(0, 0%, 100%, 0);
-	visibility: none;
-	opacity: 0;
-	z-index: -1;
-}
-.shift a:hover:after {
-	opacity: 1;
-	visibility: visible;
-	height: 100%;
-}
-
-a::before {
-	content: "";
-	display: block;
-	position: absolute;
-	bottom: 3px;
-	left: 0;
-	height: 3px;
-	width: 100%;
-	background-color: #ffffff;
-	transform-origin: right top;
-	transform: scale(0, 1);
-	transition: color 0.1s, transform 0.2s ease-out;
-}
-a:active::before {
-	background-color: #ffffff;
-}
-a:hover::before,
-a:focus::before {
-	transform-origin: left top;
-	transform: scale(1, 1);
 }
 
 .fa-twitter-square:hover {
