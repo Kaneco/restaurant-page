@@ -1,4 +1,4 @@
-const content = () => `
+const homeContent = () => `
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="./img/home1.jpg" class="d-block w-100" alt="..." />
@@ -10,7 +10,7 @@ const content = () => `
             <img src="./img/home3.jpg" class="d-block w-100" alt="..." />
         </div>
     </div>
-`
+`;
 
 const overlappedContent = () => `
 <div id=overlapped-container>
@@ -27,6 +27,6 @@ The best
     </div>
 </div>
 In Cascais!
-</div>`
+</div>`;
 
-export { content, overlappedContent }
+export { homeContent, overlappedContent };

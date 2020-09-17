@@ -1,0 +1,5 @@
+const menuContent = () => `
+`
+
+
+export { menuContent }
