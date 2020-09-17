@@ -3,11 +3,10 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media all and (max-width: 600px) {
-	#container{
+	#container {
 		grid-template-rows: 44px auto auto !important;
 	}
-	
-	
+
 	#header {
 		display: flex;
 		background: #ffffff;
@@ -22,7 +21,6 @@
 		transition: height 0.3s ease-in-out;
 		height: 44px;
 	}
-
 
 	.menu {
 		flex-flow: column wrap;
@@ -42,10 +40,9 @@
 		display: none;
 	}
 
-
 	/* When Mobile Dropdown is active */
 	/* X button on top right corner */
-	.toggle-active #mobile-menu { 
+	.toggle-active #mobile-menu {
 		position: absolute;
 		top: 1px;
 		right: 2px;
@@ -62,7 +59,7 @@
 	#header.toggle-active .menu {
 		display: block;
 		-webkit-animation: fadeIn 0.7s;
-    	animation: fadeIn 0.7s;
+		animation: fadeIn 0.7s;
 	}
 
 	/* Position Full Logo on side of menu */
@@ -72,23 +69,35 @@
 		max-width: 120px;
 		max-height: 120px;
 		top: 50%;
-        left: 50%;
-        margin-right: -50%;
+		left: 50%;
+		margin-right: -50%;
 		transform: translate(-40%, -50%);
 		-webkit-animation: fadeIn 0.7s;
-    	animation: fadeIn 0.7s;
+		animation: fadeIn 0.7s;
 	}
 
 	@-webkit-keyframes fadeIn {
-		0%   { opacity: 0; }
-		40% { opacity: 0; }
-		100% { opacity: 1; }
+		0% {
+			opacity: 0;
+		}
+		40% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 	@keyframes fadeIn {
-		0%   { opacity: 0; }
-		40% { opacity: 0; }
-		100% { opacity: 1; }
-	  }
+		0% {
+			opacity: 0;
+		}
+		40% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 
 	/* Hide mobile logo */
 	.toggle-active #mobile-logo {
@@ -219,7 +228,6 @@ body {
 	font-size: 11px;
 	justify-items: start;
 	align-items: start;
-
 }
 
 #footer h5 {
@@ -236,8 +244,38 @@ body {
 
 #content {
 	grid-area: content;
+	overflow: hidden;
+}
+
+#content.content-flex {
+	grid-area: content;
 	padding: 3%;
 	overflow: auto;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+#content.contentflex > * {
+	flex: 1 30%;
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+	height: 400px; /* The height is 400 pixels */
+	width: 95%; /* The width is the width of the web page */
+}
+
+#map-wrapper {
+	min-width: 330px;
+	width: auto;
+	align-content: center;
+	text-align: center;
+	flex-grow: 1;
+}
+
+#contact-form {
+	flex-grow: 3;
 }
 
 .food-thumbnail {
@@ -258,7 +296,6 @@ body {
 	z-index: 1;
 	place-self: center;
 	width: 100%;
-	margin-bottom: 30%;
 	text-align: center;
 	background: rgba(0, 0, 0, 0.3);
 }
