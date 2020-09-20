@@ -10,51 +10,44 @@ import { contactContent } from "./pageLoadContact";
 let contentArea = document.getElementById("content");
 let header = document.getElementById("header");
 let container = document.getElementById("container");
-let mobileMenu = document.getElementById("mobile-menu");
 let footer = document.getElementById("footer");
 // let overlap = document.getElementById("overlapped-content");
 
 header.addEventListener("click", (event) => {
 	if (event.target.id === "menu-home") {
-    // Home Menu Tab
-    contentArea.innerHTML ="";
+		// Home Menu Tab
+		contentArea.innerHTML = "";
 		contentArea.appendChild(addHomeContent());
-    container.insertBefore(addHomeOverlappedContent(), footer);
-    header.classList.remove("toggle-active");
-    document.getElementById("mobile-menu").innerHTML =
-    "<i class='fas fa-bars'></i>";
-    contentArea.classList.remove("content-flex");
+		if (!document.getElementById("overlapped-content")) { 
+			container.insertBefore(addHomeOverlappedContent(), footer);
+		}
+		contentArea.classList.remove("content-flex");
+		closeMobileHeader();
 	}
 	if (event.target.id === "menu-about") {
 		//  About Menu Tab
-    addAboutContent();
-    header.classList.remove("toggle-active");
-    contentArea.classList.add("content-flex");
-    document.getElementById("mobile-menu").innerHTML =
-    "<i class='fas fa-bars'></i>";
-    document.getElementById("overlapped-content").remove();
+		addAboutContent();
+		contentArea.classList.add("content-flex");
+		removeOverlappedContent();
+		closeMobileHeader();
 	}
 	if (event.target.id === "menu-menu") {
 		//  Menu Menu Tab
-    addMenuContent();
-    header.classList.remove("toggle-active");
-    contentArea.classList.add("content-flex");
-    document.getElementById("mobile-menu").innerHTML =
-    "<i class='fas fa-bars'></i>";
-    document.getElementById("overlapped-content").remove();
+		addMenuContent();
+		contentArea.classList.remove("content-flex");
+		removeOverlappedContent();
+		closeMobileHeader();
 	}
 	if (event.target.id === "menu-contact") {
 		//  Contact Menu Tab
-    addContactContent();
-    header.classList.remove("toggle-active");
+		addContactContent();
     contentArea.classList.add("content-flex");
-    document.getElementById("mobile-menu").innerHTML =
-    "<i class='fas fa-bars'></i>";
-    document.getElementById("overlapped-content").remove();
+		removeOverlappedContent();
+		closeMobileHeader();
 	}
 });
 
-mobileMenu.addEventListener("click", (event) => {
+document.getElementById("mobile-menu").addEventListener("click", (event) => {
 	if (header.classList.contains("toggle-active")) {
 		header.classList.remove("toggle-active");
 		document.getElementById("mobile-menu").innerHTML =
@@ -65,6 +58,20 @@ mobileMenu.addEventListener("click", (event) => {
 			"<i class='fas fa-times'></i>";
 	}
 });
+
+function closeMobileHeader() {
+	if (header.classList.contains("toggle-active")) {
+		header.classList.remove("toggle-active");
+		document.getElementById("mobile-menu").innerHTML =
+			"<i class='fas fa-bars'></i>";
+	}
+}
+
+function removeOverlappedContent() {
+	if (document.getElementById("overlapped-content")) {
+		document.getElementById("overlapped-content").remove();
+	}
+}
 
 function addHomeContent() {
 	var element = document.createElement("div");
@@ -98,5 +105,5 @@ function addContactContent() {
 	contentArea.innerHTML = contactContent();
 }
 
-contentArea.appendChild(addHomeContent());
-container.insertBefore(addHomeOverlappedContent(), footer);
+//contentArea.appendChild(addHomeContent());
+//container.insertBefore(addHomeOverlappedContent(), footer);

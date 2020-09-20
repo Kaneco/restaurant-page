@@ -13,9 +13,9 @@ const homeContent = () => `
 `;
 
 const overlappedContent = () => `
-<div id=overlapped-container>
+<div id="overlapped-container">
 The best
-<div id=flip>
+<div id="flip">
     <div>
         <div>Tacos</div>
     </div>

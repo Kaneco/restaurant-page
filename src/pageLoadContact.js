@@ -1,5 +1,5 @@
 const contactContent = () => `
-<div>
+<div id="contact-form">
                 <!--Section heading-->
                 <h2 class="h1-responsive font-weight-bold text-center my-4">Book your table</h2>
                 <!--Section description-->
