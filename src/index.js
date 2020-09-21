@@ -18,15 +18,17 @@ header.addEventListener("click", (event) => {
 		// Home Menu Tab
 		contentArea.innerHTML = "";
 		contentArea.appendChild(addHomeContent());
-		if (!document.getElementById("overlapped-content")) { 
+		if (!document.getElementById("overlapped-content")) {
 			container.insertBefore(addHomeOverlappedContent(), footer);
 		}
 		contentArea.classList.remove("content-flex");
+		contentArea.classList.remove("content-menu");
 		closeMobileHeader();
 	}
 	if (event.target.id === "menu-about") {
 		//  About Menu Tab
 		addAboutContent();
+		contentArea.classList.remove("content-menu");
 		contentArea.classList.add("content-flex");
 		removeOverlappedContent();
 		closeMobileHeader();
@@ -35,13 +37,15 @@ header.addEventListener("click", (event) => {
 		//  Menu Menu Tab
 		addMenuContent();
 		contentArea.classList.remove("content-flex");
+		contentArea.classList.add("content-menu");
 		removeOverlappedContent();
 		closeMobileHeader();
 	}
 	if (event.target.id === "menu-contact") {
 		//  Contact Menu Tab
 		addContactContent();
-    contentArea.classList.add("content-flex");
+		contentArea.classList.remove("content-menu");
+		contentArea.classList.add("content-flex");
 		removeOverlappedContent();
 		closeMobileHeader();
 	}
@@ -75,9 +79,10 @@ function removeOverlappedContent() {
 
 function addHomeContent() {
 	var element = document.createElement("div");
-	element.id = "carousel";
+	element.id = "carousel-home";
 	element.className += "carousel";
 	element.className += " slide";
+	element.className += " fit-to-screen";
 	element.setAttribute("data-ride", "carousel");
 	element.setAttribute("data-interval", "3000");
 	// use your function!
@@ -105,5 +110,5 @@ function addContactContent() {
 	contentArea.innerHTML = contactContent();
 }
 
-//contentArea.appendChild(addHomeContent());
-//container.insertBefore(addHomeOverlappedContent(), footer);
+contentArea.appendChild(addHomeContent());
+container.insertBefore(addHomeOverlappedContent(), footer);
