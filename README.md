@@ -1,5 +1,5 @@
 # restaurant-page
-Mobile responsive Restaurant page done with Javascript, HTML, CSS and Bootstrap
+Mobile responsive Restaurant page done with Javascript, HTML, CSS, Bootstrap and FontAwesome
 
 Using NPM and Webpack to manage packages and modules
 
