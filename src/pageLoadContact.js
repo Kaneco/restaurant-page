@@ -82,11 +82,11 @@ const contactContent = () => `
                             </li>
 
                             <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                                <p>(+351) 214 076 708</p>
+                                <p>(+351) 222 222 222</p>
                             </li>
 
                             <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                                <p>contact@pacobigotes.pt</p>
+                                <p>contact@restaurant.com</p>
                             </li>
                         </ul>
                     </div>
