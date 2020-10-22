@@ -1,8 +1,6 @@
 # Restaurant Page
 Mobile responsive Restaurant page done with Javascript, HTML, CSS, Bootstrap and FontAwesome
 
-
-
 **Total project time:** 17h
 
 ## Live Demo
@@ -13,7 +11,14 @@ Here is the live demo: https://kaneco.github.io/restaurant-page/
 ## Preview Desktop
 ![enter image description here](https://i.imgur.com/DzaCCuT.png)
 
-
+## Technologies Used:
+ - Javascript
+ - HTML
+ - CSS
+ - Bootstrap
+ - FontAwesome
+ - NPM
+ - Webpack
 ## Source
 
 [The Odin Project Curriculum](https://www.theodinproject.com/courses/javascript/lessons/restaurant-page)
@@ -32,5 +37,5 @@ The Odin Project (https://www.theodinproject.com/courses/javascript/lessons/rest
 
 Total project time: 17h
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzNjcyXX0=
+eyJoaXN0b3J5IjpbLTEzNDMzMDg3MjldfQ==
 -->
