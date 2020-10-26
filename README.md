@@ -4,7 +4,7 @@ Mobile responsive Restaurant page done with Javascript, HTML, CSS, Bootstrap and
 **Total project time:** 17h
 
 ## Live Demo
-Here is the live demo: https://kaneco.github.io/restaurant-page/
+Here is the live demo: https://ze-gomes.github.io/restaurant-page/
 
 ## Preview Mobile
 ![enter image description here](https://i.imgur.com/WEZI4OG.jpg)
